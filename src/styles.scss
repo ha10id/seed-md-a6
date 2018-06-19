@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import 'loader';
+@include mat-core();
+$primary: mat-palette($mat-blue , 600);
+$accent:  mat-palette($mat-light-blue, 600, 100, 800);
+$warn:    mat-palette($mat-red, 600);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+.default-shadow {
+  // Adds a shadow for elevation level 2 with default color and full opacity:
+  @include mat-elevation(5);
+}
+.shadow {
+  @include mat-elevation-transition;
+  @include mat-elevation(4);
+
+  &:active {
+    @include mat-elevation(8);
+  }
+}
+@include angular-material-theme($theme);
+// @import "node_modules/normalize.css/normalize.css";
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Exo 2'), local('Exo2-Regular'), url(https://fonts.gstatic.com/s/exo2/v3/5wNWQyMFSso70eLBsy32FQ.woff2) format('woff2');
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo 2', 'Roboto', 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #868585;
+  background: #dfe7e7 !important;
+  height: 100%;
+  overflow: hidden;
+}
+.mat-toolbar-row, .mat-toolbar-single-row{
+  height:42px !important;
+}
+
+.z-depth-1 { box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
+.z-depth-1-half { box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2); }
+.z-depth-2 { box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3); }
+.z-depth-3 { box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3); }
+.z-depth-4 { box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3); }
+.z-depth-5 { box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3); }

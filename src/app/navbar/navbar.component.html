@@ -1,0 +1,26 @@
+<mat-toolbar color="primary" class="default-shadow">
+  <button mat-button routerLink="/">
+    <mat-icon>home</mat-icon>
+    <!-- <span>{{title}}</span> -->
+  </button>
+  <span class="fill-remaining-space"></span>
+  <div fxLayout="row" fxHide fxShow.gt-sm>
+    <button mat-button routerLink="/products">Продукты</button>
+    <button mat-button routerLink="/dashboard">Панель управления</button>
+    <button mat-button [mat-menu-trigger-for]="personmenu">
+      <mat-icon>{{person_icon}}</mat-icon>
+    </button>
+  </div>
+  <button mat-button [mat-menu-trigger-for]="menu" fxShow fxHide.gt-sm>
+   <mat-icon>menu</mat-icon>
+ </button>
+</mat-toolbar>
+<mat-menu x-position="before" #menu>
+  <button mat-menu-item routerLink="/products">Продукты</button>
+  <button mat-menu-item routerLink="/dashboard">Панель управления</button>
+</mat-menu>
+<mat-menu x-position="before" [overlapTrigger] = "false" #personmenu>
+  <button mat-menu-item routerLink="/products">Продукты</button>
+  <button mat-menu-item routerLink="/dashboard">Панель управления</button>
+</mat-menu>
+
